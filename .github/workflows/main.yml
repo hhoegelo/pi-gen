@@ -23,7 +23,7 @@ jobs:
 
       - name: Create GitHub Release
         env:
-          GITHUB_TOKEN: ${{ secrets.MOSAIK_RELEASES }}
+          GITHUB_TOKEN: ${{ secrets.MOSAIK_OS_RELEASES }}
           VERSION: ${{github.run_number}}
         run: |
           gh release create $VERSION ${{github.workspace}}/deploy/*.img -R hhoegelo/pi-gen -n "$VERSION Release"
