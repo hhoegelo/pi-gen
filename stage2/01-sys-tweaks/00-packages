@@ -3,8 +3,6 @@ console-setup keyboard-configuration debconf-utils parted
 bash-completion
 gpiod raspi-gpio
 avahi-daemon
-lua5.1
-luajit
 ca-certificates curl
 fake-hwclock nfs-common usbutils
 dosfstools
@@ -14,7 +12,6 @@ pi-bluetooth
 apt-listchanges
 usb-modeswitch
 libpam-chksshpwd
-rpi-update
 libmtp-runtime
 rsync
 htop
