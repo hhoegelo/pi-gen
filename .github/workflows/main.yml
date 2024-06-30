@@ -19,10 +19,7 @@ jobs:
           sudo apt-get -y install podman binfmt-support qemu-user-static ccache
 
       - name: Build
-        run: |
-          pwd
-          ls -la
-          ./build-docker.sh
+        run: ./build-docker.sh
 
       - name: 'Upload Artifact'
         uses: actions/upload-artifact@v4
