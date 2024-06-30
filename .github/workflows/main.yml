@@ -2,9 +2,9 @@ name: Build Mosiak OS images
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "mosaik-os" ]
   pull_request:
-    branches: [ "master" ]
+    branches: [ "mosaik-os" ]
 
 jobs:
   build:
@@ -25,4 +25,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: raspi-package
-          path: ${{github.workspace}}/deplay/*.img
+          path: ${{github.workspace}}/deploy/*.img
