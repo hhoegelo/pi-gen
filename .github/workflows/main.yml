@@ -21,8 +21,9 @@ jobs:
       - name: Build
         run: ./build-docker.sh
 
-      - name: 'Upload Artifact'
-        uses: actions/upload-artifact@v4
-        with:
-          name: raspi-package
-          path: ${{github.workspace}}/deploy/*.img
+      - name: Create GitHub Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.MOSAIK_RELEASES }}
+          VERSION: ${{github.run_number}}
+        run: |
+          gh release create $VERSION ${{github.workspace}}/deploy/*.img -R hhoegelo/pi-gen -n "$VERSION Release"
