@@ -26,4 +26,4 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.MOSAIK_OS_RELEASES }}
           VERSION: ${{github.run_number}}
         run: |
-          gh release create $VERSION ${{github.workspace}}/deploy/*.img -R hhoegelo/pi-gen -n "$VERSION Release"
+          gh release create $VERSION ${{github.workspace}}/deploy/*.xz -R hhoegelo/pi-gen -n "$VERSION Release"
