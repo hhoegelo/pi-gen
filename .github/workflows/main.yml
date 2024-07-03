@@ -1,6 +1,8 @@
 name: Build Mosiak OS images
 
 on:
+  repository_dispatch:
+    types: [release_published]
   push:
     branches: [ "mosaik-os" ]
   pull_request:
