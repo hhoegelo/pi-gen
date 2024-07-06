@@ -8,10 +8,9 @@ RUN apt-get -y update && \
         git vim parted \
         quilt coreutils qemu-user-static debootstrap zerofree zip dosfstools \
         libarchive-tools libcap2-bin rsync grep udev xz-utils curl xxd file kmod bc \
-        binfmt-support ca-certificates fdisk gpg pigz arch-test \
+        binfmt-support ca-certificates fdisk gpg pigz arch-test flac \
     && rm -rf /var/lib/apt/lists/*
 
-RUN apt-get -y install flac
 COPY . /pi-gen/
 
 VOLUME [ "/pi-gen/work", "/pi-gen/deploy"]
