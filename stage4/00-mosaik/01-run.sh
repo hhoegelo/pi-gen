@@ -1,4 +1,4 @@
-#!/bin/bash -xe
+#!/bin/bash -x
 
 BASE_URL=https://github.com/hhoegelo/mosaik-releases/releases/latest/download/
 
