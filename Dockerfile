@@ -11,7 +11,7 @@ RUN apt-get -y update && \
         binfmt-support ca-certificates fdisk gpg pigz arch-test \
     && rm -rf /var/lib/apt/lists/*
 
-RUN apt-get -y flac
+RUN apt-get -y install flac
 COPY . /pi-gen/
 
 VOLUME [ "/pi-gen/work", "/pi-gen/deploy"]
