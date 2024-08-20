@@ -1,0 +1,30 @@
+name: Build Mosiak OS images
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ "mosaik-os" ]
+  pull_request:
+    branches: [ "mosaik-os" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get -y update
+          sudo apt-get -y install podman binfmt-support qemu-user-static ccache
+
+      - name: Build
+        run: ./build-docker.sh
+
+      - name: Create GitHub Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.MOSAIK_OS_RELEASES }}
+          VERSION: ${{github.run_number}}
+        run: |
+          gh release create $VERSION ${{github.workspace}}/deploy/*.xz -R hhoegelo/pi-gen -n "$VERSION Release"
