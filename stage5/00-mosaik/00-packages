@@ -2,3 +2,10 @@ mc
 libglibmm-2.4-1v5
 libgtkmm-3.0
 libgstreamermm-1.0-1
+lxde
+lxde-common
+lxde-core
+lxde-icon-theme
+lxappearance
+lxtask
+lxterminal

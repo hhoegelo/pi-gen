@@ -1,11 +1,7 @@
-debian-reference-en
 raspberrypi-net-mods raspberrypi-ui-mods
 sense-hat
 tree
-libgl1-mesa-dri libgles1 libgles2-mesa xcompmgr
+libgl1-mesa-dri libgles1 libgles2-mesa
 pprompt
-piwiz
 rp-prefapps
 rpi-connect
-rpi-imager
-labwc
